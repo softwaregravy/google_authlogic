@@ -1,6 +1,7 @@
 GoogleAuthlogic::Application.routes.draw do
 
   resources :user_sessions
+  resources :users
   root :to => "user_sessions#new"
 
 

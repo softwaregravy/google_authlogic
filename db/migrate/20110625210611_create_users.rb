@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :login
       t.string :email
-      t.string :cypted_password
+      t.string :crypted_password
       t.string :password_salt
       t.string :persistence_token
       t.string :single_access_token

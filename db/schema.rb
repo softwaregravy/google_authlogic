@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110625210611) do
   create_table "users", :force => true do |t|
     t.string   "login"
     t.string   "email"
-    t.string   "cypted_password"
+    t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
     t.string   "single_access_token"
