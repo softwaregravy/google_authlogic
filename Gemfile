@@ -7,6 +7,8 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 gem 'authlogic'
+gem 'ruby-openid'
+gem 'rake', '0.8.7'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -30,4 +32,5 @@ gem 'authlogic'
 group :development, :test do
   gem 'rspec-rails'
   gem 'annotate-models'
+  gem 'heroku'
 end
