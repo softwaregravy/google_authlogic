@@ -1,4 +1,10 @@
 GoogleAuthlogic::Application.routes.draw do
+
+  resources :user_sessions
+  root :to => "user_sessions#new"
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

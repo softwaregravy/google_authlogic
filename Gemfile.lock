@@ -28,6 +28,7 @@ GEM
       activemodel (= 3.0.9)
       activesupport (= 3.0.9)
     activesupport (3.0.9)
+    annotate-models (1.0.4)
     arel (2.0.10)
     authlogic (3.0.3)
       activerecord (>= 3.0.7)
@@ -88,6 +89,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate-models
   authlogic
   rails (= 3.0.9)
   rspec-rails
