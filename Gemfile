@@ -8,7 +8,10 @@ gem 'rails', '3.0.9'
 gem 'sqlite3'
 gem 'authlogic'
 gem 'ruby-openid'
+gem 'rack-openid'
 gem 'rake', '0.8.7'
+gem 'authlogic-oid'
+#gem 'ruby-openid-apps-discovery'
 
 # Use unicorn as the web server
 # gem 'unicorn'

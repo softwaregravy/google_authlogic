@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include AuthenticationHelper
   protect_from_forgery
   helper_method :current_user_session, :current_user
 
@@ -13,6 +14,7 @@ class ApplicationController < ActionController::Base
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.user
   end
+
   def require_user
     unless current_user
       store_location
@@ -26,7 +28,7 @@ class ApplicationController < ActionController::Base
     if current_user
       store_location
       flash[:notice] = "You must be logged out to access this page"
-      redirect_to account_url
+      redirect_to user_path(current_user)
       return false
     end
   end
