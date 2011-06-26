@@ -7,15 +7,16 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-      @user_session = UserSession.new(params[:user_session])
-
-      @user_session.save do |result|
-        if result
-          successful_login
-        else
-          failed_login
-        end
+    @user_session = UserSession.new(params[:user_session])
+    @user_session.save do |result|
+      if result
+        session[:user_id] = @current_user.id
+        flash[:notice] = "Login successful!"
+        redirect_to user_path(@user)
+      else
+        render :action => :new
       end
+    end
   end
 
   def destroy
@@ -25,16 +26,5 @@ class UserSessionsController < ApplicationController
     redirect_back_or_default new_user_session_url
   end
 
-  private 
-
-  def successful_login 
-    session[:user_id] = @current_user.id
-    flash[:notice] = "Login successful!"
-    redirect_back_or_default new_user_session_url
-  end 
-
-  def failed_login(message = nil) 
-    render :action => :new
-  end 
 end
 

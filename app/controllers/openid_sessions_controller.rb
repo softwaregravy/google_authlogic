@@ -20,10 +20,13 @@ class OpenidSessionsController < ApplicationController
         user = User.where(:openid_identifier => openid.display_identifier).first
         user ||= User.create!(:openid_identifier => openid.display_identifier,
                               :email => ax.get_single('http://axschema.org/contact/email'))
+        @current_user = user
         session[:user_id] = user.id
-        redirect_to(session[:redirect_to] || root_path)
+        redirect_to user_path :id => user.id
       when :failure
-        raise "balls"
+        puts "complete failure :("
+        p openid 
+        redirect_to new_user_session_path
       end
     else
       redirect_to new_user_session_path
