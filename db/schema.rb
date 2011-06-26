@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110625210611) do
+ActiveRecord::Schema.define(:version => 20110625230548) do
 
   create_table "users", :force => true do |t|
     t.string   "login"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(:version => 20110625210611) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "openid_identifier"
   end
+
+  add_index "users", ["openid_identifier"], :name => "index_users_on_openid_identifier"
 
 end

@@ -1,6 +1,7 @@
 GoogleAuthlogic::Application.routes.draw do
 
   resources :user_sessions
+  resources :openid_sessions
   match '/signout', :to => "user_sessions#destroy"
   match '/signin', :to => "user_sessions#new"
   resources :users

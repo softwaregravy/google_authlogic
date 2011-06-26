@@ -12,6 +12,4 @@
   <%= f.submit "Login" %>
 <% end %>
 
-<%= form_for @user_session, :as => :user_session, :url => {:action => "create"} do |f|  %>
-  <%= f.submit "Log in with Google" %>
-<% end %>
+<%= link_to "Log in with Google", new_openid_session_path %>
